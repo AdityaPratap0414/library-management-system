@@ -12,11 +12,11 @@ A Python command-line Library Management System for managing books, members, boo
 - Issue books
 - Return books
 - View library report
-- Save data using JSON
+
 
 ## Technologies
 - Python
-- JSON
+
 
 ## How to Run
 1. Install Python.
@@ -27,15 +27,10 @@ A Python command-line Library Management System for managing books, members, boo
 python main.py
 ```
 
-## Data Storage
-Library information is stored in `data/library.json`.
-
 ## Project Files
 - `main.py`
 - `book_manager.py`
 - `member_manager.py`
 - `issue_manager.py`
-- `reports.py`
-- `database.py`
-- `validation.py`
-- `tests/`
+- `lab_reports.py`
+
