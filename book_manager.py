@@ -1,43 +1,37 @@
-def add_book(books):
-    book_id = input("Enter Book ID: ")
-    title = input("Enter Book Title: ")
-    author = input("Enter Author: ")
+books = []
 
-    for book in books:
-        if book["id"] == book_id:
-            print("Book ID already exists.")
-            return
+def ab():  # Add Books
+    id = input("Enter Book ID: ")
+    t = input("Enter Book Title: ")
+    a = input("Enter Book Author: ")
 
     books.append({
-        "id": book_id,
-        "title": title,
-        "author": author,
-        "available": True,
-        "issued_to": None
+        "id": id,
+        "title": t,
+        "author": a,
+        "available": True
     })
 
-    print("Book added successfully.")
+    print("Books added successfully!")
 
 
-def view_books(books):
-    if not books:
-        print("No books found.")
-        return
-
-    for book in books:
-        status = "Available" if book["available"] else "Issued"
-        print(f'ID: {book["id"]} | Title: {book["title"]} | Author: {book["author"]} | Status: {status}')
+def vb():  # View Books
+    if len(books) == 0:
+        print("No Book found!")
+    else:
+        for i in books:
+            print(f'ID: {i["id"]} | Title: {i["title"]} | Author: {i["author"]} | Available: {i["available"]}')
 
 
-def search_books(books):
-    search = input("Enter book title or author: ").lower()
-    found = False
+def sb():  # Search Books
+    if len(books) == 0:
+        print("No Book found!")
+    else:
+        uid = input("Enter Book ID to search: ")
 
-    for book in books:
-        if search in book["title"].lower() or search in book["author"].lower():
-            status = "Available" if book["available"] else "Issued"
-            print(f'ID: {book["id"]} | Title: {book["title"]} | Author: {book["author"]} | Status: {status}')
-            found = True
+        for i in books:
+            if i["id"] == uid:
+                print(f'ID: {i["id"]} | Title: {i["title"]} | Author: {i["author"]} | Available: {i["available"]}')
+                return
 
-    if not found:
-        print("Book not found.")
+        print("Book not found!")
